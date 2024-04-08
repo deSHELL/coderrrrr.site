@@ -1,4 +1,5 @@
 ---
-title: Welcome to my blog
+title: DeVa.NoM.zA
+A blog created for me
 ---
 
