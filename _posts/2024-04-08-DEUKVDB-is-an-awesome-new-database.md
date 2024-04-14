@@ -35,7 +35,7 @@ $ git clone https://github.com/turbomaster95/deukvdb.git
 $ cd deukvdb
 $ make all
 ```
-#₹ Start Using DEUKVDB
+## Start Using DEUKVDB
 Once compiled, you can run DEUKVDB as a standalone server or integrate it into your Python applications using the provided API.
 
 ## Conclusion
