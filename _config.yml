@@ -219,3 +219,5 @@ exclude:
 
 
 destination: ./build
+include:
+  - ".well-known"
