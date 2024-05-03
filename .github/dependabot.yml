@@ -12,9 +12,3 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-
-  # Maintain dependencies for gemfile/gemspec
-  - package-ecosystem: "bundler"
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
