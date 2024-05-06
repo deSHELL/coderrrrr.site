@@ -6,14 +6,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-gh-pages:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
+  setup-deps:
+        name: Setup Dependencies
+        runs-on: ubuntu-22.04
 
-    - name: Deploy Jekyll Site
-      uses: sujaykundu777/jekyll-deploy-action@1.0.3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-        GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+        steps:
+          - uses: actions/checkout@v4
+          - name: RUn
