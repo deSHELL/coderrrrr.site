@@ -22,3 +22,4 @@ jobs:
               ./configure
               sudo make install
               sudo make install_libs
+              lowdown --help
