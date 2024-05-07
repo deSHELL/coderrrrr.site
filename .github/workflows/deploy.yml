@@ -9,7 +9,6 @@ jobs:
   setup-deps:
         name: Setup Dependencies
         runs-on: ubuntu-22.04
-
         steps:
           - name: Checkout lowdown repo
             uses: actions/checkout@v4
@@ -25,8 +24,6 @@ jobs:
   run-ssg:
 	name: Run SSG5 to generate site
 	runs-on: ubuntu-22.04
-
-
 	steps:
 	  - name: Add ssg5 to PATH
 	    run: |
