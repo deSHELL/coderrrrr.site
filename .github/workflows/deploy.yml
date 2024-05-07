@@ -22,7 +22,6 @@ jobs:
               sudo dpkg -i pandoc-3.1.13-1-amd64.deb
               pandoc --help
   run-ssg:
-  	name: Run SSG5 to generate site
 	needs: setup-deps
         steps:
 	  - name: Add ssg5 to PATH
