@@ -23,7 +23,6 @@ jobs:
               pandoc --help
   run-ssg:
 	name: Run SSG5 to generate site
-	runs-on: ubuntu-22.04
 	steps:
 	  - name: Add ssg5 to PATH
 	    run: |
