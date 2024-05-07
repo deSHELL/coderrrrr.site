@@ -12,7 +12,7 @@ jobs:
 
         steps:
           - name: Build Essentials Setup
-            run: apt update && apt install build-essentials make -y
+            run: sudo apt update && sudo apt install build-essentials make -y
           - name: Checkout lowdown repo
             uses: actions/checkout@v4
             with:
@@ -21,5 +21,5 @@ jobs:
             run: |
               cd lowdown
               ./configure
-              make install
-              make install_libs
+              sudo make install
+              sudo make install_libs
