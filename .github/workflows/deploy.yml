@@ -11,15 +11,14 @@ jobs:
         runs-on: ubuntu-22.04
 
         steps:
-          - name: Build Essentials Setup
-            run: sudo apt update && sudo apt install build-essential make -y
           - name: Checkout lowdown repo
             uses: actions/checkout@v4
             with:
-              repository: kristapsdz/lowdown
-          - name: Configure, Build and Install lowdown
+              repository: fmash16/ssg5
+          - name: Install Pandoc
             run: |
-              ./configure
-              sudo make install
-              sudo make install_libs
-              lowdown --help
+              sudo apt update
+              sudo apt install -y texlive wget curl
+              wget https://github.com/jgm/pandoc/releases/download/3.1.13/pandoc-3.1.13-1-amd64.deb
+              sudo dpkg -i pandoc-3.1.13-1-amd64.deb
+              pandoc --help
