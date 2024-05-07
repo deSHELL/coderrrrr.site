@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup-deps:
-        name: Setup Dependencies
+  setup-deps-and-build:
+        name: Setup Dependencies and build site
         runs-on: ubuntu-22.04
         steps:
           - name: Checkout lowdown repo
