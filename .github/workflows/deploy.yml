@@ -11,5 +11,15 @@ jobs:
         runs-on: ubuntu-22.04
 
         steps:
+          - name: Build Essentials Setup
+          - run: apt update && apt install build-essentials make -y
+          - name: Checkout lowdown repo
           - uses: actions/checkout@v4
-          - name: RUn
+            with:
+              name: kristapsdz/lowdown
+          - name: Configure, Build and Install lowdown
+          - run: |
+              cd lowdown
+              ./configure
+              make install
+              make install_libs
