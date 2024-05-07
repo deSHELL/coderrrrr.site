@@ -29,13 +29,13 @@ jobs:
 
 	steps:
 	  - name: Add ssg5 to PATH
-	  - run: |
+	    run: |
 	      sudo mv ssg5 /usr/local/bin
           
 	  - name: Checkout Website repo
-	  - uses: actions/checkout@v4
+	    uses: actions/checkout@v4
 	  
 	  - name: Generate Site using ssg5
-	  - run: |
+	    run: |
 	      mkdir dst
 	      ssg5 src dst 'Coderrrrr' 'https://coderrrrr.site'
