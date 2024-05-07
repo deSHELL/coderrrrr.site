@@ -19,7 +19,6 @@ jobs:
               repository: kristapsdz/lowdown
           - name: Configure, Build and Install lowdown
             run: |
-              cd lowdown
               ./configure
               sudo make install
               sudo make install_libs
