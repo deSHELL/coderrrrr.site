@@ -12,13 +12,13 @@ jobs:
 
         steps:
           - name: Build Essentials Setup
-          - run: apt update && apt install build-essentials make -y
+            run: apt update && apt install build-essentials make -y
           - name: Checkout lowdown repo
-          - uses: actions/checkout@v4
+            uses: actions/checkout@v4
             with:
-              name: kristapsdz/lowdown
+              repository: kristapsdz/lowdown
           - name: Configure, Build and Install lowdown
-          - run: |
+            run: |
               cd lowdown
               ./configure
               make install
