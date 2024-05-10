@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup-deps-and-build:
+  setup-deps-and-build-site:
         name: Setup Dependencies and build site
         runs-on: ubuntu-22.04
         steps:
@@ -21,16 +21,14 @@ jobs:
               wget https://github.com/jgm/pandoc/releases/download/3.1.13/pandoc-3.1.13-1-amd64.deb
               sudo dpkg -i pandoc-3.1.13-1-amd64.deb
               pandoc --help
-  run-ssg:
-	needs: setup-deps
-        steps:
+	
 	  - name: Add ssg5 to PATH
 	    run: |
 	      sudo mv ssg5 /usr/local/bin
-          
-	  - name: Checkout Website repo
+       
+          - name: Checkout Website repo
 	    uses: actions/checkout@v4
-	  
+     
 	  - name: Generate Site using ssg5
 	    run: |
 	      mkdir dst
