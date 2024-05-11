@@ -15,17 +15,14 @@ jobs:
             with:
               repository: fmash16/ssg5
           - name: Install Pandoc
-            run: |
+	    run: |
               sudo apt update
               sudo apt install -y texlive wget curl
               wget https://github.com/jgm/pandoc/releases/download/3.1.13/pandoc-3.1.13-1-amd64.deb
               sudo dpkg -i pandoc-3.1.13-1-amd64.deb
               pandoc --help
-	
-	  - name: Add ssg5 to PATH
-	    run: |
 	      sudo mv ssg5 /usr/local/bin
-       
+
           - name: Checkout Website repo
 	    uses: actions/checkout@v4
      
