@@ -1,4 +1,4 @@
-const preElement = document.querySelector('pre');
+
 const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 // Function to fetch ASCII art from a file
@@ -17,6 +17,7 @@ async function fetchAsciiArt(filename) {
 
 // Load ASCII art and update <pre>
 async function displayAsciiArt() {
+  const preElement = document.querySelector('pre');
   const bigAsciiArt = await fetchAsciiArt('bigasciiart.txt');
   const smallAsciiArt = await fetchAsciiArt('smallasciiart.txt');
 
