@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function displayAsciiArt() {
-      const bigAsciiArt = await fetchAsciiArt('bigAsciiArt.txt');
-      const smallAsciiArt = await fetchAsciiArt('smallAsciiArt.txt');
+      const bigAsciiArt = await fetchAsciiArt('bigasciiart.txt');
+      const smallAsciiArt = await fetchAsciiArt('smallasciiart.txt');
 
       if (isMobileDevice) {
         preElement.textContent = smallAsciiArt;
@@ -27,4 +27,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     displayAsciiArt();
-  });
+});
