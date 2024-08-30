@@ -1,24 +1,22 @@
-const preElement = document.querySelector('pre');
-const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-async function fetchAsciiArt(filename) {
-  try {
-    const response = await fetch(filename);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${filename}`);
-    }
-    return await response.text();
-  } catch (error) {
-    console.error('Error loading ASCII art:', error);
-    return ''; // Return an empty string on error
-  }
+// Function to load the correct ASCII art based on screen width
+function loadAsciiArt() {
+    const asciiArtElement = document.getElementById('asciiArt');
+    const screenWidth = window.innerWidth;
+    const artFile = screenWidth < 768 ? 'smallAsciiArt.txt' : 'bigAsciiArt.txt'; // Adjust the width condition as needed
+
+    fetch(artFile)
+        .then(response => response.text())
+        .then(data => {
+            asciiArtElement.textContent = data;
+        })
+        .catch(error => {
+            console.error('Error loading ASCII art:', error);
+            asciiArtElement.textContent = "Error loading ASCII art.";
+        });
 }
-async function displayAsciiArt() {
-  const bigAsciiArt = await fetchAsciiArt('bigAsciiArt.txt');
-  const smallAsciiArt = await fetchAsciiArt('smallAsciiArt.txt');
-  if (isMobileDevice) {
-    preElement.textContent = smallAsciiArt;
-  } else {
-    preElement.textContent = bigAsciiArt;
-  }
-}
-displayAsciiArt();
+
+// Load the ASCII art on page load
+window.onload = loadAsciiArt;
+
+// Optionally, reload the ASCII art when the window is resized
+window.onresize = loadAsciiArt;
