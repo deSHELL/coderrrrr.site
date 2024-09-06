@@ -1,6 +1,1 @@
-rm -rf docs/* docs/.files
-./bin/ssg5 src/ docs/ "Coderrrrr's Portfolio" "https://coderrrrr.site"
-echo "coderrrrr.site" > docs/CNAME
-echo "e7c6d036e73243a588eafb3327db84d7" > docs/e7c6d036e73243a588eafb3327db84d7
-rm docs/index.js
-uglifyjs src/index.js -o docs/index.js --compress --mangle
+bun run build

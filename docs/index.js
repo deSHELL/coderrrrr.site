@@ -1,1 +1,0 @@
-function loadAsciiArt(){let i=document.getElementById("asciiArt");var t=window.innerWidth;fetch(t<768?"smallAsciiArt.txt":"bigAsciiArt.txt").then(t=>t.text()).then(t=>{i.textContent=t}).catch(t=>{console.error("Error loading ASCII art:",t),i.textContent="Error loading ASCII art."})}window.onload=loadAsciiArt,window.onresize=loadAsciiArt;
